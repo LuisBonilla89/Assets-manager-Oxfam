@@ -25,11 +25,11 @@ Route::get('/', function () {
 
 });
 
-Route::get('posts/{post}', function ($slug) {
+Route::get('posts/{post}', function ($id) {
 
 
     return view('post', [
-        'post' => Post::find($slug)
+        'post' => Post::findorFail($id)
     ]);
 
     // The line of code below adds a wildcard constrain for routes by using a regular expression
